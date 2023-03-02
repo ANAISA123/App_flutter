@@ -1,7 +1,7 @@
-import 'package:app_crud_flutter/add_product.dart';
+import 'package:app_crud_flutter/add_estudiante.dart';
 import 'package:app_crud_flutter/message_response.dart';
 import 'package:flutter/material.dart';
-import 'package:app_crud_flutter/modify_product.dart';
+import 'package:app_crud_flutter/modify_estudiante.dart';
 
 class Home_Page extends StatefulWidget {
   final String _title;
