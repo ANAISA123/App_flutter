@@ -2,21 +2,21 @@ import 'package:app_crud_flutter/home_page.dart';
 import 'package:app_crud_flutter/text_box.dart';
 import 'package:flutter/material.dart';
 
-class AddProduct extends StatefulWidget {
+class AddEstudiante extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => _AddProduct();
+  State<StatefulWidget> createState() => _AddEstudiante();
 }
 
-class _AddProduct extends State<AddProduct> {
-  late TextEditingController controllerName;
-  late TextEditingController controllerDescription;
-  late TextEditingController controllerPrice;
+class _AddEstudiante extends State<AddEstudiante> {
+  late TextEditingController controllerNombre;
+  late TextEditingController controllerSemestre;
+  late TextEditingController controllerEmail;
 
   @override
   void initState() {
-    controllerName = new TextEditingController();
-    controllerDescription = new TextEditingController();
-    controllerPrice = new TextEditingController();
+    controllerNombre = new TextEditingController();
+    controllerSemestre = new TextEditingController();
+    controllerEmail = new TextEditingController();
     super.initState();
   }
 
@@ -24,31 +24,31 @@ class _AddProduct extends State<AddProduct> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Crer nuevo producto"),
+          title: Text("Ingresar nuevo estudiante"),
         ),
         body: ListView(
           children: [
-            TextBox(controllerName, "Name"),
-            TextBox(controllerDescription, "Description"),
-            TextBox(controllerPrice, "Price"),
+            TextBox(controllerNombre, "Nombre"),
+            TextBox(controllerSemestre, "Semestre"),
+            TextBox(controllerEmail, "Email"),
             ElevatedButton(
                 onPressed: () {
-                  String name = controllerName.text;
-                  String description = controllerDescription.text;
-                  String price = controllerPrice.text;
+                  String nombre = controllerNombre.text;
+                  String semestre = controllerSemestre.text;
+                  String email = controllerEmail.text;
 
-                  if (name.isNotEmpty &&
-                      description.isNotEmpty &&
-                      price.isNotEmpty) {
+                  if (nombre.isNotEmpty &&
+                      semestre.isNotEmpty &&
+                      email.isNotEmpty) {
                     Navigator.pop(
                         context,
-                        new Product(
-                            name: name,
-                            description: description,
-                            price: price));
+                        new Estudiante(
+                            nombre: nombre,
+                            semestre: semestre,
+                            email: email));
                   }
                 },
-                child: Text("Guardar producto"))
+                child: Text("Guardar estudiante"))
           ],
         ));
   }
