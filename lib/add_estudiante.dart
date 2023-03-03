@@ -43,7 +43,9 @@ class _AddEstudiante extends State<AddEstudiante> {
                     Navigator.pop(
                         context,
                         new Estudiante(
-                            nombre: nombre, semestre: semestre, email: email));
+                            nombre: nombre,
+                            semestre: semestre,
+                            email: email));
                   }
                 },
                 child: Text("Guardar estudiante"))
